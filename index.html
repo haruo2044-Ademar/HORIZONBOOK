@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script>(function(){var P="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%233b3b3b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23161616%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M150%20190l35-42%2028%2032%2018-20%2039%2030z%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.14%22%2F%3E%3Ccircle%20cx%3D%22238%22%20cy%3D%22125%22%20r%3D%2213%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.14%22%2F%3E%3C%2Fsvg%3E";try{var s=document.createElement('style');s.textContent='img[src*="picsum.photos"]{background:linear-gradient(135deg,#3b3b3b,#161616)}';(document.head||document.documentElement).appendChild(s)}catch(e){}addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&!t.hasAttribute('data-ateus-fb')){t.setAttribute('data-ateus-fb','');t.removeAttribute('srcset');t.src=P}},true)})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prateleira Bruta — Ebooks que prestam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161412;
+    --ink-soft:#3d3833;
+    --paper:#f4f0e8;
+    --paper-2:#eae4d8;
+    --line:#d3cab8;
+    --accent:#c8402a;
+    --accent-dark:#9c2f1d;
+    --tech:#2f4b5e;
+    --color:#6b4a8a;
+    --romance:#a8465c;
+    --radius:2px;
+    --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{font-family:"Bricolage Grotesque",Helvetica,sans-serif;line-height:1.05;letter-spacing:-0.02em;font-weight:800}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--s4)}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,240,232,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-0.03em;display:flex;align-items:center;gap:8px;text-decoration:none}
+  .brand span{display:inline-block;width:10px;height:10px;background:var(--accent);border-radius:50%}
+  .nav-links{display:flex;gap:var(--s5);list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.9rem;letter-spacing:.01em;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s ease-out}
+  .nav-links a:hover,.nav-links a:focus-visible{border-bottom-color:var(--accent)}
+  .nav-cta{
+    background:var(--ink);color:var(--paper);text-decoration:none;
+    padding:10px 20px;border-radius:var(--radius);
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.88rem;
+    min-height:44px;display:inline-flex;align-items:center;
+    transition:background .2s ease-out,transform .2s ease-out;
+  }
+  .nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
+  .nav-cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);width:44px;height:44px;border-radius:var(--radius);cursor:pointer;font-size:1.3rem;color:var(--ink)}
+  .menu-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:var(--s8) 0 var(--s7);position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--s7);align-items:center}
+  .kicker{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.78rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:var(--s4);
+  }
+  .kicker::before{content:"";width:32px;height:2px;background:var(--accent)}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin-bottom:var(--s4);letter-spacing:-0.035em}
+  .hero h1 em{font-style:normal;color:var(--accent);position:relative}
+  .hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-soft);max-width:46ch;margin-bottom:var(--s5)}
+  .hero-actions{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center}
+  .btn{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.95rem;
+    padding:14px 28px;border-radius:var(--radius);text-decoration:none;border:2px solid transparent;
+    min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    cursor:pointer;transition:all .2s ease-out;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px)}
+  .btn-primary:active{transform:translateY(0)}
+  .btn-primary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-ghost:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  /* stack de capas */
+  .stack{position:relative;height:440px;display:flex;align-items:center;justify-content:center}
+  .book{
+    position:absolute;width:190px;height:280px;border-radius:3px;
+    box-shadow:0 18px 40px -12px rgba(22,20,18,.45), 0 2px 0 rgba(255,255,255,.4) inset;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:20px;
+    color:#fff;font-family:"Bricolage Grotesque",sans-serif;overflow:hidden;
+    transition:transform .35s ease-out;
+  }
+  .book::after{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:rgba(0,0,0,.18)}
+  .book b{font-size:1.05rem;line-height:1.15;letter-spacing:-0.01em;position:relative;z-index:2}
+  .book small{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-top:6px;position:relative;z-index:2}
+  .book i{position:absolute;font-style:normal;font-size:5rem;opacity:.18;right:-8px;top:0;z-index:1}
+  .b1{background:linear-gradient(150deg,#2f4b5e,#1c2f3b);transform:rotate(-9deg) translateX(-70px);z-index:3}
+  .b2{background:linear-gradient(150deg,#6b4a8a,#3f2a55);transform:rotate(2deg) translateY(-14px);z-index:2}
+  .b3{background:linear-gradient(150deg,#a8465c,#6d2637);transform:rotate(11deg) translateX(72px);z-index:1}
+  .stack:hover .b1{transform:rotate(-12deg) translateX(-84px) translateY(-6px)}
+  .stack:hover .b2{transform:rotate(2deg) translateY(-22px)}
+  .stack:hover .b3{transform:rotate(14deg) translateX(86px) translateY(-6px)}
+
+  /* ---------- FAIXA ---------- */
+  .strip{background:var(--ink);color:var(--paper);padding:var(--s4) 0;overflow:hidden}
+  .strip-track{display:flex;gap:var(--s6);white-space:nowrap;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;opacity:.9;animation:slide 32s linear infinite}
+  .strip-track span{display:inline-flex;align-items:center;gap:var(--s6)}
+  .strip-track span::after{content:"◆";color:var(--accent);font-size:.7rem}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- CATÁLOGO ---------- */
+  .catalog{padding:var(--s8) 0}
+  .section-head{max-width:620px;margin-bottom:var(--s6)}
+  .section-head h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:var(--s3)}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    display:flex;flex-direction:column;overflow:hidden;
+    transition:transform .25s ease-out,box-shadow .25s ease-out;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -22px rgba(22,20,18,.35)}
+  .card-cover{
+    aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;
+    padding:var(--s4);color:#fff;position:relative;overflow:hidden;
+  }
+  .card-cover::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 8px);
+  }
+  .tag{
+    align-self:flex-start;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+    font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(255,255,255,.18);padding:5px 10px;border-radius:1px;position:relative;z-index:2;
+  }
+  .card-cover h3{font-size:clamp(1.4rem,2.4vw,1.85rem);position:relative;z-index:2;line-height:1.1}
+  .card-cover .author{font-family:"Bricolage Grotesque",sans-serif;font-size:.8rem;opacity:.85;margin-top:8px;position:relative;z-index:2}
+  .card-body{padding:var(--s4);display:flex;flex-direction:column;gap:var(--s3);flex:1}
+  .card-desc{color:var(--ink-soft);font-size:.95rem;line-height:1.55;flex:1}
+  .meta{display:flex;gap:var(--s3);font-family:"Bricolage Grotesque",sans-serif;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);flex-wrap:wrap}
+  .meta span{display:flex;align-items:center;gap:5px}
+  .meta span::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%}
+  .price-row{display:flex;align-items:baseline;gap:10px;margin-top:auto}
+  .price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.7rem;letter-spacing:-0.02em}
+  .price-old{font-size:.95rem;color:var(--ink-soft);text-decoration:line-through}
+  .card .btn{width:100%;margin-top:var(--s2)}
+
+  /* ---------- COMO FUNCIONA ---------- */
+  .how{background:var(--paper-2);padding:var(--s8) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);counter-reset:step}
+  .step{position:relative;padding-top:var(--s5);border-top:2px solid var(--ink)}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.85rem;
+    color:var(--accent);letter-spacing:.1em;position:absolute;top:var(--s3);left:0;
+  }
+  .step h3{font-size:1.25rem;margin-bottom:var(--s2);margin-top:var(--s3)}
+  .step p{color:var(--ink-soft);font-size:.95rem}
+
+  /* ---------- DEPOIMENTO / PROVA ---------- */
+  .proof{padding:var(--s8) 0}
+  .proof-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s7);align-items:center}
+  blockquote{font-size:clamp(1.3rem,2.6vw,1.9rem);font-family:"Bricolage Grotesque",sans-serif;font-weight:600;line-height:1.3;letter-spacing:-0.02em;border-left:4px solid var(--accent);padding-left:var(--s4)}
+  blockquote cite{display:block;font-family:"Source Serif 4",serif;font-weight:400;font-size:.95rem;font-style:normal;color:var(--ink-soft);margin-top:var(--s4);letter-spacing:0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+  .stat{border-top:1px solid var(--line);padding-top:var(--s3)}
+  .stat b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-0.03em;line-height:1}
+  .stat span{font-size:.85rem;color:var(--ink-soft);font-family:"Bricolage Grotesque",sans-serif;letter-spacing:.03em}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:var(--s8) 0;background:var(--ink);color:var(--paper)}
+  .faq .section-head p{color:#c9c1b3}
+  .faq .section-head h2{color:var(--paper)}
+  .faq-list{max-width:760px}
+  details{border-bottom:1px solid #3a352f;padding:var(--s4) 0}
+  details summary{
+    cursor:pointer;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.05rem;
+    list-style:none;display:flex;justify-content:space-between;gap:var(--s3);align-items:center;
+    color:var(--paper);min-height:32px;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:1.5rem;color:var(--accent);transition:transform .25s ease-out;line-height:1}
+  details[open] summary::after{transform:rotate(45deg)}
+  details summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  details p{margin-top:var(--s3);color:#c9c1b3;font-size:.98rem;max-width:64ch}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:var(--s6) 0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap;font-size:.88rem;color:var(--ink-soft)}
+  .foot a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  .foot a:hover{border-bottom-color:var(--accent)}
+
+  /* ---------- RESPONSIVO ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:var(--s6)}
+    .stack{height:340px;order:-1}
+    .book{width:150px;height:220px;padding:16px}
+    .book b{font-size:.9rem}
+    .grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr;gap:var(--s5)}
+    .proof-grid{grid-template-columns:1fr;gap:var(--s6)}
+  }
+  @media (max-width:680px){
+    body{font-size:17px}
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .nav-links.open{
+      display:flex;position:absolute;top:68px;left:0;right:0;background:var(--paper);
+      flex-direction:column;padding:var(--s4);gap:var(--s3);border-bottom:1px solid var(--line);
+    }
+    .grid{grid-template-columns:1fr}
+    .stack{height:300px}
+    .book{width:130px;height:190px;padding:14px}
+    .book b{font-size:.8rem}
+    .hero{padding:var(--s6) 0 var(--s6)}
+    .catalog,.how,.proof,.faq{padding:var(--s7) 0}
+    .stats{grid-template-columns:1fr;gap:var(--s3)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand"><span></span><i id="brandName" style="font-style:normal">Prateleira Bruta</i></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+      <li><a href="#catalogo" class="nav-cta">Comprar agora</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker" id="heroKicker">Ebooks direto ao ponto</div>
+        <h1 id="heroTitle">Três estantes. <em>Zero enrolação.</em></h1>
+        <p class="lead" id="heroLead">Técnico pra quem precisa resolver, coloring book pra desligar a cabeça e romance pra quando o mundo já cansou. Download na hora, sem assinatura, sem pegadinha.</p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary" id="heroCta">Ver os ebooks</a>
+          <a href="#como" class="btn btn-ghost">Como recebo?</a>
+        </div>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="book b1"><i>⚙</i><b>Técnico</b><small>Prático</small></div>
+        <div class="book b2"><i>✎</i><b>Coloring</b><small>Relaxa</small></div>
+        <div class="book b3"><i>♥</i><b>Romance</b><small>Ficção</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Download imediato</span><span>PDF e EPUB</span><span>Pagamento seguro</span><span>Sem assinatura</span><span>Atualizações grátis</span>
+      <span>Download imediato</span><span>PDF e EPUB</span><span>Pagamento seguro</span><span>Sem assinatura</span><span>Atualizações grátis</span>
+    </div>
+  </div>
+
+  <section class="catalog" id="catalogo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>O catálogo</h2>
+        <p>Cada ebook é um arquivo só seu, pra sempre. Escolhe a estante e leva.</p>
+      </div>
+      <div class="grid" id="productGrid"><!-- gerado via JS --></div>
+    </div>
+  </section>
+
+  <section class="how" id="como">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Do clique ao PDF em 2 minutos</h2>
+        <p>Sem cadastro chato, sem espera de aprovação manual.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Escolhe o ebook</h3><p>Clique em comprar no card que te interessou. O checkout abre direto.</p></div>
+        <div class="step"><h3>Paga como quiser</h3><p>Pix, cartão ou boleto. O processamento é automático e seguro.</p></div>
+        <div class="step"><h3>Recebe na hora</h3><p>O link de download cai no teu e-mail em segundos. PDF + EPUB.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <blockquote>
+        “Comprei o técnico na sexta e resolvi o problema no sábado de manhã. Direto, sem 300 páginas de introdução.”
+        <cite>— Leitor verificado, compra de outubro</cite>
+      </blockquote>
+      <div class="stats">
+        <div class="stat"><b id="statSales">4.200+</b><span>downloads entregues</span></div>
+        <div class="stat"><b>4,8/5</b><span>nota média dos leitores</span></div>
+        <div class="stat"><b>2 min</b><span>do pagamento ao arquivo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Perguntas que sempre chegam</h2>
+        <p>Se a tua não estiver aqui, é só responder o e-mail da compra.</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>Em qual formato recebo o ebook?</summary><p>PDF e EPUB no mesmo pacote. O PDF funciona em qualquer aparelho, o EPUB se adapta ao tamanho da tela do Kindle, celular ou tablet.</p></details>
+        <details><summary>É pagamento único?</summary><p>Sim. Você paga uma vez e o arquivo é seu pra sempre, incluindo atualizações futuras daquele título.</p></details>
+        <details><summary>Posso imprimir o coloring book?</summary><p>Pode, e é pra isso que ele existe. O arquivo foi montado em resolução alta pra impressão em A4 sem perder o traço.</p></details>
+        <details><summary>Não recebi o e-mail, e agora?</summary><p>Confere a caixa de spam. Se não achar em 10 minutos, responde o e-mail de confirmação da compra que a gente reenvia o link.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> <span id="brandFoot">Prateleira Bruta</span> — todos os direitos reservados.</div>
+    <div><a href="#catalogo">Catálogo</a> · <a href="#faq">Dúvidas</a> · <a href="mailto:contato@exemplo.com">Contato</a></div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — é AQUI que você edita. Nada abaixo precisa mexer.
+   ============================================================ */
+const CONFIG = {
+  marca: "Prateleira Bruta",
+
+  hero: {
+    kicker: "Ebooks direto ao ponto",
+    titulo: "Três estantes. <em>Zero enrolação.</em>",
+    texto: "Técnico pra quem precisa resolver, coloring book pra desligar a cabeça e romance pra quando o mundo já cansou. Download na hora, sem assinatura, sem pegadinha.",
+    botao: "Ver os ebooks"
+  },
+
+  // Cada item = um card. Copie um bloco inteiro pra adicionar mais ebooks.
+  produtos: [
+    {
+      tag: "Técnico",
+      titulo: "Linux na Prática",
+      autor: "por R. Almeida",
+      descricao: "Comandos, permissões, serviços e troubleshooting para quem precisa resolver no servidor, não decorar teoria.",
+      paginas: "180 páginas",
+      formato: "PDF + EPUB",
+      preco: "R$ 39",
+      precoAntigo: "R$ 59",
+      corInicio: "#2f4b5e",
+      corFim: "#1c2f3b",
+      linkCompra: "https://seu-checkout.com/linux-na-pratica"
+    },
+    {
+      tag: "Coloring Book",
+      titulo: "Linhas e Silêncio",
+      autor: "por M. Costa",
+      descricao: "40 ilustrações em traço fino para desacelerar a cabeça. Pronto para imprimir em A4, sem perder detalhe.",
+      paginas: "40 pranchas",
+      formato: "PDF alta resolução",
+      preco: "R$ 19",
+      precoAntigo: "R$ 29",
+      corInicio: "#6b4a8a",
+      corFim: "#3f2a55",
+      linkCompra: "https://seu-checkout.com/linhas-e-silencio"
+    },
+    {
+      tag: "Romance",
+      titulo: "O Último Trem",
+      autor: "por A. Ferreira",
+      descricao: "Dois estranhos, uma estação vazia e uma decisão que muda tudo. 280 páginas de tensão bem construída.",
+      paginas: "280 páginas",
+      formato: "PDF + EPUB",
+      preco: "R$ 24",
+      precoAntigo: "R$ 34",
+      corInicio: "#a8465c",
+      corFim: "#6d2637",
+      linkCompra: "https://seu-checkout.com/o-ultimo-trem"
+    }
+  ],
+
+  stats: { downloads: "4.200+" }
+};
+
+/* ============================================================
+   RENDER — não precisa editar daqui pra baixo.
+   ============================================================ */
+document.getElementById("brandName").textContent = CONFIG.marca;
+document.getElementById("brandFoot").textContent = CONFIG.marca;
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("heroKicker").textContent = CONFIG.hero.kicker;
+document.getElementById("heroTitle").innerHTML = CONFIG.hero.titulo;
+document.getElementById("heroLead").textContent = CONFIG.hero.texto;
+document.getElementById("heroCta").textContent = CONFIG.hero.botao;
+document.getElementById("statSales").textContent = CONFIG.stats.downloads;
+
+const grid = document.getElementById("productGrid");
+grid.innerHTML = CONFIG.produtos.map(p => `
+  <article class="card">
+    <div class="card-cover" style="background:linear-gradient(150deg,${p.corInicio},${p.corFim})">
+      <span class="tag">${p.tag}</span>
+      <div>
+        <h3>${p.titulo}</h3>
+        <div class="author">${p.autor}</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">${p.descricao}</p>
+      <div class="meta"><span>${p.paginas}</span><span>${p.formato}</span></div>
+      <div class="price-row">
+        <span class="price">${p.preco}</span>
+        ${p.precoAntigo ? `<span class="price-old">${p.precoAntigo}</span>` : ""}
+      </div>
+      <a class="btn btn-primary" href="${p.linkCompra}" target="_blank" rel="noopener">Comprar ${p.titulo}</a>
+    </div>
+  </article>
+`).join("");
+
+// menu mobile
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+navLinks.querySelectorAll("a").forEach(a =>
+  a.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  })
+);
+</script>
+</body>
+</html>
