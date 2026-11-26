@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><script>(function(){var P="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%233b3b3b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23161616%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22M150%20190l35-42%2028%2032%2018-20%2039%2030z%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.14%22%2F%3E%3Ccircle%20cx%3D%22238%22%20cy%3D%22125%22%20r%3D%2213%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.14%22%2F%3E%3C%2Fsvg%3E";try{var s=document.createElement('style');s.textContent='img[src*="picsum.photos"]{background:linear-gradient(135deg,#3b3b3b,#161616)}';(document.head||document.documentElement).appendChild(s)}catch(e){}addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&!t.hasAttribute('data-ateus-fb')){t.setAttribute('data-ateus-fb','');t.removeAttribute('srcset');t.src=P}},true)})();</script>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prateleira Bruta — Ebooks que prestam</title>
@@ -16,9 +16,6 @@
     --line:#d3cab8;
     --accent:#c8402a;
     --accent-dark:#9c2f1d;
-    --tech:#2f4b5e;
-    --color:#6b4a8a;
-    --romance:#a8465c;
     --radius:2px;
     --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
     --max:1180px;
@@ -139,10 +136,24 @@
     content:"";position:absolute;inset:0;
     background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 8px);
   }
+  .card-cover img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  }
+  .card-cover .tag,
+  .card-cover .cover-text { position:relative; z-index:2; }
+  .card-cover.has-image{
+    justify-content:flex-end;
+    padding-bottom:var(--s4);
+  }
+  .card-cover.has-image::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.15) 45%, transparent 70%);
+  }
   .tag{
     align-self:flex-start;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
     font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
     background:rgba(255,255,255,.18);padding:5px 10px;border-radius:1px;position:relative;z-index:2;
+    backdrop-filter: blur(4px);
   }
   .card-cover h3{font-size:clamp(1.4rem,2.4vw,1.85rem);position:relative;z-index:2;line-height:1.1}
   .card-cover .author{font-family:"Bricolage Grotesque",sans-serif;font-size:.8rem;opacity:.85;margin-top:8px;position:relative;z-index:2}
@@ -331,7 +342,7 @@
 <footer>
   <div class="wrap foot">
     <div>© <span id="year"></span> <span id="brandFoot">Prateleira Bruta</span> — todos os direitos reservados.</div>
-    <div><a href="#catalogo">Catálogo</a> · <a href="#faq">Dúvidas</a> · <a href="mailto:contato@exemplo.com">Contato</a></div>
+    <div><a href="#catalogo">Catálogo</a> · <a href="#faq">Dúvidas</a> · <a href=haruo2044@gmail.com>Contato</a></div>
   </div>
 </footer>
 
@@ -366,16 +377,17 @@ const CONFIG = {
     },
     {
       tag: "Coloring Book",
-      titulo: "Linhas e Silêncio",
-      autor: "por M. Costa",
-      descricao: "40 ilustrações em traço fino para desacelerar a cabeça. Pronto para imprimir em A4, sem perder detalhe.",
-      paginas: "40 pranchas",
-      formato: "PDF alta resolução",
-      preco: "R$ 19",
-      precoAntigo: "R$ 29",
+      titulo: "Crônicas da Floresta Mágica",
+      autor: "Animais, Fadas e Refúgios para Colorir",
+      descricao: "Um portal para um mundo de fantasia e tranquilidade. Ilustrações ricas em detalhes para reduzir a ansiedade, melhorar o foco e despertar seu lado artístico. Inclui criaturas místicas (unicórnios, dragões, fênix) e animais da floresta encantada (cervos, coelhos, gatos mágicos).",
+      paginas: "Ilustrações exclusivas",
+      formato: "PDF alta resolução (A4)",
+      preco: "R$ 27",
+      precoAntigo: "R$ 34",
       corInicio: "#6b4a8a",
       corFim: "#3f2a55",
-      linkCompra: "https://seu-checkout.com/linhas-e-silencio"
+      imagem: "img/capa-floresta-magica.png",
+      linkCompra: "https://pay.hotmart.com/B107471893Q?checkoutMode=10"
     },
     {
       tag: "Romance",
@@ -408,11 +420,16 @@ document.getElementById("heroCta").textContent = CONFIG.hero.botao;
 document.getElementById("statSales").textContent = CONFIG.stats.downloads;
 
 const grid = document.getElementById("productGrid");
-grid.innerHTML = CONFIG.produtos.map(p => `
+grid.innerHTML = CONFIG.produtos.map(p => {
+  const bgStyle = p.imagem ? "" : `background:linear-gradient(150deg,${p.corInicio},${p.corFim})`;
+  const coverClass = p.imagem ? "card-cover has-image" : "card-cover";
+  const imgTag = p.imagem ? `<img src="${p.imagem}" alt="Capa de ${p.titulo}" loading="lazy">` : "";
+  return `
   <article class="card">
-    <div class="card-cover" style="background:linear-gradient(150deg,${p.corInicio},${p.corFim})">
+    <div class="${coverClass}" style="${bgStyle}">
+      ${imgTag}
       <span class="tag">${p.tag}</span>
-      <div>
+      <div class="cover-text">
         <h3>${p.titulo}</h3>
         <div class="author">${p.autor}</div>
       </div>
@@ -426,8 +443,8 @@ grid.innerHTML = CONFIG.produtos.map(p => `
       </div>
       <a class="btn btn-primary" href="${p.linkCompra}" target="_blank" rel="noopener">Comprar ${p.titulo}</a>
     </div>
-  </article>
-`).join("");
+  </article>`;
+}).join("");
 
 // menu mobile
 const menuBtn = document.getElementById("menuBtn");
